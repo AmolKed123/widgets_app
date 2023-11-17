@@ -1,4 +1,4 @@
-import * as React from "react";
+import React,{useState} from "react";
 import {
   Box,
   Stepper,
@@ -8,14 +8,13 @@ import {
   Typography,
 } from "@mui/material";
 
-//const steps = ["Sign Up For Account", "Sign In Using Credentials", "Sign Out"];
 
 export default function HorizontalLinearStepper({steps}) {
-  const [activeStep, setActiveStep] = React.useState(0);
-  const [skipped, setSkipped] = React.useState(new Set());
+  const [activeStep, setActiveStep] = useState(0);
+  const [skipped, setSkipped] = useState(new Set());
 
   const isStepOptional = (step) => {
-    return step === 1;
+    //return step === 1;
   };
 
   const isStepSkipped = (step) => {
@@ -98,11 +97,11 @@ export default function HorizontalLinearStepper({steps}) {
               Back
             </Button>
             <Box sx={{ flex: "1 1 auto" }} />
-            {isStepOptional(activeStep) && (
+            {/* {isStepOptional(activeStep) && (
               <Button color="inherit" onClick={handleSkip} sx={{ mr: 1 }}>
                 Skip
               </Button>
-            )}
+            )} */}
 
             <Button onClick={handleNext}>
               {activeStep === steps.length - 1 ? "Finish" : "Next"}

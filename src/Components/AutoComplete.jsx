@@ -102,8 +102,8 @@ console.log("Input Value",inputValue);
         setInputValue(newInputValue);
       }}
       options={LocationsList}
-      sx={{ width: 300 }}
-      renderInput={(params) => <TextField {...params} label="Location" />}
+      sx={{ width:180 }}
+      renderInput={(params) => <TextField fullWidth {...params} label="Location" />}
     />
   );
 }
