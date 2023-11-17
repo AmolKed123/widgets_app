@@ -4,34 +4,41 @@ import {
   GridToolbarContainer,
   GridToolbarExport,
 } from "@mui/x-data-grid";
-import { Stack } from "@mui/material";
+import { Stack, Box } from "@mui/material";
 
 function CustomToolbar() {
   return (
-    <GridToolbarContainer>
-      <GridToolbarExport printOptions={{ disableToolbarButton: true }} />
-    </GridToolbarContainer>
+    <Stack direction="row-reverse">
+      <GridToolbarContainer>
+        <GridToolbarExport printOptions={{ disableToolbarButton: true }} />
+      </GridToolbarContainer>
+    </Stack>
   );
 }
 
+
 const columns = [
-  { field: "id", headerName: "ID", minWidth: "100" },
-  { field: "firstName", headerName: "First name", minWidth: "100" },
-  { field: "lastName", headerName: "Last name", minWidth: "100" },
+  {
+    field: "id",
+    headerName: "ID",
+    flex: 1
+  },
+  { field: "firstName", headerName: "First Name" },
+  { field: "lastName", headerName: "Last Name" },
   {
     field: "age",
     headerName: "Age",
-    type: "number",
-    minWidth: 100,
+    flex: 1,
+    //type: "number"
   },
   {
     field: "fullName",
-    headerName: "Full name",
+    headerName: "Full Name",
     description: "This column has a value getter and is not sortable.",
     sortable: false,
-    minWidth: 100,
     valueGetter: (params) =>
       `${params.row.firstName || ""} ${params.row.lastName || ""}`,
+    minWidth: 100,
   },
   { field: "employeeId", headerName: "Employee ID" },
   { field: "email", headerName: "Email" },
@@ -49,9 +56,9 @@ const columns = [
   { field: "district", headerName: "District" },
   { field: "subDistrict", headerName: "Sub District" },
   { field: "state", headerName: "State" },
-  { field: "pinCode", headerName: "PinCode" },
+  { field: "pinCode", headerName: "Pin Code" },
   { field: "country", headerName: "Country" },
-  { field: "gender", headerName: "gender" },
+  { field: "gender", headerName: "Gender" },
   { field: "maritalStatus", headerName: "Marital Status" },
 ];
 
@@ -316,29 +323,83 @@ const rows = [
     gender: "Female",
     maritalStatus: "Single",
   },
+  {
+    id: 11,
+    firstName: "Suraj",
+    lastName: "Londhe",
+    age: 28,
+    employeeId: "11",
+    email: "suraj956@gmail.com",
+    mobile: 7565424741,
+    hireDate: "6/05/2022",
+    jobId: 114,
+    salary: 41700,
+    commisionPercentage: "4%",
+    managerId: "10",
+    departmentId: 2,
+    alternateEmail: "surajlondhe@yahoo.com",
+    alternateMobile: 657120614,
+    city: "Amravati",
+    area: "Shastri Nagar",
+    district: "Amravati",
+    subDistrict: "Amravati",
+    state: "Maharashtra",
+    pinCode: "411205",
+    country: "India",
+    gender: "Male",
+    maritalStatus: "Single",
+  },
+  {
+    id: 12,
+    firstName: "Sonal",
+    lastName: "Jha",
+    age: 26,
+    employeeId: "12",
+    email: "sonaljha@gmail.com",
+    mobile: 5265224739,
+    hireDate: "9/05/2022",
+    jobId: 115,
+    salary: 43500,
+    commisionPercentage: "6%",
+    managerId: "11",
+    departmentId: 7,
+    alternateEmail: "sonaljha@yahoo.com",
+    alternateMobile: 657120614,
+    city: "Amravati",
+    area: "Mantri Nagar",
+    district: "Amravati",
+    subDistrict: "Amravati",
+    state: "Maharashtra",
+    pinCode: "411205",
+    country: "India",
+    gender: "Female",
+    maritalStatus: "Single",
+  },
 ];
 
 export default function Table() {
   return (
-    <div style={{ height: "auto", width:"auto",maxWidth: "100%" }}>
+    <div style={{ height: "auto", width: "auto", maxWidth: "100%" }}>
       <DataGrid
+        autoHeight={true}
+        rowHeight={36}
         rows={rows}
         columns={columns}
         checkboxSelection={true}
         initialState={{
           pagination: {
-            paginationModel: { page: 0, pageSize: 10 },
+            paginationModel: { page: 0, pageSize: 4 },
           },
         }}
-        pageSizeOptions={[8, 10]}
+        pageSizeOptions={[4,8,10]}
         slots={{
           toolbar: CustomToolbar,
         }}
         sx={{
-          ".MuiButtonBase-root": {
-           
-
-          },
+          fontSize:"0.8rem",
+          '& .MuiDataGrid-columnHeaderTitle':{
+            color:"#262626",fontWeight:"500",fontSize:"0.9rem"
+          }
         }}
       />
     </div>

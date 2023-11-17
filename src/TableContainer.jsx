@@ -15,19 +15,26 @@ import TabsComponent from "./Components/TabsComponent";
 import AccordionComponent from "./Components/AccordionComponent";
 import DataTable from "./Components/DataTable";
 import Header from "./Header";
-import { Stack } from "@mui/material";
+import { Stack, Box } from "@mui/material";
+import "./TableContainer.css";
+import BasicTextField from "./CommonComponents/BasicTextField";
 
 export default function TableContainer() {
   return (
     <>
-      <Stack sx={{width:"100%"}}>
+      <Stack sx={{ width: "100%" }}>
         <Header />
-        <Stack
-          className="child-components"
-          sx={{ mx: 5, width:"auto",border: "1px solid red" }}
-        >
+        <Stack className="child-components" sx={{ mx: 5, width: "auto" }}>
+          <Box sx={{ mt: 3 }}>
+            <BasicTextField
+              labelValue="Location"
+              sizeValue="small"
+              widthValue="150px"
+            />
+          </Box>
+
           <Stack direction="row" alignItems="center" spacing={3} sx={{ mt: 5 }}>
-            <p>1. AutoComplete TextField - </p>
+            <p className="autocompleteclass">1. AutoComplete TextField - </p>
             <AutoComplete />
           </Stack>
           <Stack direction="row" alignItems="center" spacing={3} sx={{ mt: 5 }}>
@@ -42,7 +49,7 @@ export default function TableContainer() {
             <p>4. Table - </p>
             <Table />
           </Stack> */}
-          {/* <Stack direction="row" alignItems="center" spacing={3} sx={{ mt: 5 }}>
+          <Stack direction="row" alignItems="center" spacing={3} sx={{ mt: 5 }}>
             <p>6. Modal - </p>
             <SubscribeModel data="Please Provide Email Address To Subscribe To This Website" />
           </Stack>
@@ -70,8 +77,8 @@ export default function TableContainer() {
               message="You Are Registered Successfully"
               colorValue="success"
             />
-          </Stack> */}
-          {/* <Stack direction="row" alignItems="center" spacing={3} sx={{ mt: 5 }}>
+          </Stack>
+          <Stack direction="row" alignItems="center" spacing={3} sx={{ mt: 5 }}>
             <p>11. Date Picker - </p>
             <DatePickerComponent heading="Basic Data Picker" />
           </Stack>
@@ -86,8 +93,8 @@ export default function TableContainer() {
           <Stack direction="row" alignItems="center" spacing={3} sx={{ mt: 5 }}>
             <p>14. Rating Component - </p>
             <RatingComponent ratingColor="#ffd11a" />
-          </Stack> */}
-          {/* <Stack
+          </Stack>
+          <Stack
             direction="row"
             alignItems="center"
             spacing={3}
@@ -95,15 +102,15 @@ export default function TableContainer() {
           >
             <p>15. Tabs Component - </p>
             <TabsComponent />
-          </Stack> */}
-          {/* <Stack direction="row" alignItems="center" spacing={2} sx={{ mt: 5 }}>
+          </Stack>
+          <Stack direction="row" alignItems="center" spacing={2} sx={{ mt: 5 }}>
             <p>16. Accordion Component - </p>
             <AccordionComponent />
-          </Stack> */}
-          <Stack direction="row" alignItems="center"  sx={{ mt: 5 }}>
+          </Stack>
+          <Stack direction="row" alignItems="center" sx={{ mt: 5 }}>
             <Table />
           </Stack>
-           {/* <Stack direction="row" alignItems="center" spacing={3} sx={{ mt: 5 }}>
+          {/* <Stack direction="row" alignItems="center" spacing={3} sx={{ mt: 5 }}>
             <DataTable />
           </Stack> */}
         </Stack>

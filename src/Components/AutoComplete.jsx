@@ -1,5 +1,6 @@
 import React,{useState,useEffect} from "react";
-import { TextField, Autocomplete } from "@mui/material";
+import { TextField, Autocomplete,Typography } from "@mui/material";
+import BasicTextField from "../CommonComponents/BasicTextField";
 
 const LocationsList = [
   {
@@ -96,14 +97,23 @@ console.log("Input Value",inputValue);
   return (
     <Autocomplete
       disablePortal
+      ListboxProps={{
+        sx: { fontSize:15,padding:"0" },
+      }}
       id="combo-box-demo"
       value={inputValue}
       onInputChange={(event, newInputValue) => {
         setInputValue(newInputValue);
       }}
       options={LocationsList}
-      sx={{ width:180 }}
-      renderInput={(params) => <TextField fullWidth {...params} label="Location" />}
+      sx={{ width:150}}
+      renderInput={(params) =>  <TextField
+        label="Location"
+        id="outlined-size-small"
+        {...params}
+        size="small"
+        sx={{fontSize:"15px !important"}}
+      />}
     />
   );
 }
