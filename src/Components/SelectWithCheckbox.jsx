@@ -16,7 +16,7 @@ const MenuProps = {
   PaperProps: {
     style: {
       maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
-      width: 150,
+      width: 160,
     },
   },
 };
@@ -59,8 +59,8 @@ export default function SelectWithCheckbox() {
   return (
     <>
       <Stack>
-        <FormControl sx={{ m: 0, width: 150}} size="small">
-          <InputLabel id="demo-multiple-checkbox-label" sx={{fontSize:'14px !important'}}>Country</InputLabel>
+        <FormControl sx={{ m: 0, width: 160}} size="small">
+          <InputLabel id="demo-multiple-checkbox-label" sx={{fontSize:'16px !important'}}>Country</InputLabel>
           <Select
             labelId="demo-multiple-checkbox-label"
             id="demo-multiple-checkbox"
@@ -68,12 +68,12 @@ export default function SelectWithCheckbox() {
             value={countryName}
             onChange={handleChange}
             label="Country"
-            sx={{fontSize:'14px !important'}}
+            sx={{fontSize:'16px !important'}}
             renderValue={(selected) => selected.join(", ")}
             MenuProps={MenuProps}
           >
             {countryNames.map((name) => (
-              <MenuItem key={name} value={name} size="small" sx={{p:0,fontSize:'14px !important'}}>
+              <MenuItem key={name} value={name} size="small" sx={{p:0,fontSize:'16px !important'}}>
                 <Checkbox sx={{p:0.4}} size="small" checked={countryName.indexOf(name) > -1} />
                 {name}
               </MenuItem>

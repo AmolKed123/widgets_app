@@ -18,6 +18,7 @@ import Header from "./Header";
 import { Stack, Box } from "@mui/material";
 import "./TableContainer.css";
 import BasicTextField from "./CommonComponents/BasicTextField";
+import CustomPicker from "./Components/CustomDatePicker";
 
 export default function TableContainer() {
   return (
@@ -28,8 +29,7 @@ export default function TableContainer() {
           <Box sx={{ mt: 3 }}>
             <BasicTextField
               labelValue="Location"
-              sizeValue="small"
-              widthValue="150px"
+              
             />
           </Box>
 
@@ -80,7 +80,8 @@ export default function TableContainer() {
           </Stack>
           <Stack direction="row" alignItems="center" spacing={3} sx={{ mt: 5 }}>
             <p>11. Date Picker - </p>
-            <DatePickerComponent heading="Basic Data Picker" />
+            {/* <CustomPicker /> */}
+             <DatePickerComponent heading="Basic Data Picker" />
           </Stack>
           <Stack direction="row" alignItems="center" spacing={3} sx={{ mt: 5 }}>
             <p>12. Bar Chart - </p>
