@@ -1,5 +1,5 @@
-import React,{useState,useEffect} from "react";
-import { TextField, Autocomplete,Typography } from "@mui/material";
+import React, { useState, useEffect } from "react";
+import { TextField, Autocomplete, Typography } from "@mui/material";
 
 const LocationsList = [
   {
@@ -90,14 +90,14 @@ const LocationsList = [
 ];
 
 export default function AutoCompleteField() {
-const [inputValue, setInputValue] = useState('');
+  const [inputValue, setInputValue] = useState("");
 
-console.log("Input Value",inputValue);
+  console.log("Input Value", inputValue);
   return (
     <Autocomplete
       disablePortal
       ListboxProps={{
-        sx: { fontSize:16 },
+        sx: { fontSize: 14, p: 0, maxHeight: "164px" },
       }}
       id="combo-box-demo"
       value={inputValue}
@@ -105,15 +105,28 @@ console.log("Input Value",inputValue);
         setInputValue(newInputValue);
       }}
       options={LocationsList}
-      sx={{ width:160,fontSize:"16px  !important"}}
-      renderInput={(params) =>  <TextField
-       {...params}
-        label="Location"
-        id="outlined-size-small"
-        size="small"
-        InputLabelProps={{style: {fontSize:16}}}
-       
-      />}
+      sx={{
+        width: 160,
+        borderRadius:'6px',
+        fontSize: "14px  !important",
+        "& + .MuiAutocomplete-popper .MuiAutocomplete-option": {
+         py:0.4
+        },
+      }}
+      renderInput={(params) => (
+        <TextField
+          {...params}
+          label="Location"
+          id="outlined-size-small"
+          size="small"
+          InputLabelProps={{ style: { fontSize: 14 } }}
+          sx={{
+            "& .MuiInputBase-root": {
+              fontSize: "14px",borderRadius:'6px'
+            }
+          }}
+        />
+      )}
     />
   );
 }

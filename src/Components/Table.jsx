@@ -388,7 +388,7 @@ export default function Table() {
         checkboxSelection={true}
         initialState={{
           pagination: {
-            paginationModel: { page: 0, pageSize: 4 },
+            paginationModel: { page: 0, pageSize: 8 },
           },
         }}
         pageSizeOptions={[4,8,10]}

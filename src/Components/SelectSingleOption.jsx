@@ -47,7 +47,7 @@ const countryNames = [
   "Qatar",
 ];
 
-export default function SelectWithCheckbox() {
+export default function SelectSingleOption() {
   const [countryName, setCountryName] = useState([]);
 
   const handleChange = (event) => {
@@ -55,7 +55,7 @@ export default function SelectWithCheckbox() {
     const {
       target: { value },
     } = event;
-    setCountryName(typeof value === "string" ? value.split(",") : value);
+    setCountryName(value);
   };
 
   return (
@@ -71,12 +71,10 @@ export default function SelectWithCheckbox() {
           <Select
             labelId="demo-multiple-checkbox-label"
             id="demo-multiple-checkbox"
-            multiple
             value={countryName}
             onChange={handleChange}
             label="Country"
             sx={{ fontSize: "14px !important",borderRadius:'6px' }}
-            renderValue={(selected) => selected.join(", ")}
             MenuProps={MenuProps}
           >
             {countryNames.map((name) => (
@@ -84,14 +82,9 @@ export default function SelectWithCheckbox() {
                 key={name}
                 value={name}
                 size="small"
-                sx={{ p: 0, fontSize: "14px !important" }}
+                sx={{ py: 0.5,px:1.5, fontSize: "14px !important" }}
               >
-                <Checkbox
-                  sx={{ p: 0.5 }}
-                  size="small"
-                  checked={countryName.indexOf(name) > -1}
-                />
-                {name}
+                <span>{name}</span>
               </MenuItem>
             ))}
           </Select>

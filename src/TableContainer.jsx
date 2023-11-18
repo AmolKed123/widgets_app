@@ -19,6 +19,7 @@ import { Stack, Box } from "@mui/material";
 import "./TableContainer.css";
 import BasicTextField from "./CommonComponents/BasicTextField";
 import CustomPicker from "./Components/CustomDatePicker";
+import SelectSingleOption from "./Components/SelectSingleOption";
 
 export default function TableContainer() {
   return (
@@ -40,6 +41,10 @@ export default function TableContainer() {
           <Stack direction="row" alignItems="center" spacing={3} sx={{ mt: 5 }}>
             <p>2. Select With Checkbox - </p>
             <SelectWithCheckbox />
+          </Stack>
+          <Stack direction="row" alignItems="center" spacing={3} sx={{ mt: 5 }}>
+            <p>2. Select Single Option - </p>
+            <SelectSingleOption />
           </Stack>
           <Stack direction="row" alignItems="center" spacing={3} sx={{ mt: 5 }}>
             <p>3. Volume Slider - </p>
@@ -81,7 +86,7 @@ export default function TableContainer() {
           <Stack direction="row" alignItems="center" spacing={3} sx={{ mt: 5 }}>
             <p>11. Date Picker - </p>
             {/* <CustomPicker /> */}
-             <DatePickerComponent heading="Basic Data Picker" />
+             <DatePickerComponent heading="Admission And Joining Date Picker" />
           </Stack>
           <Stack direction="row" alignItems="center" spacing={3} sx={{ mt: 5 }}>
             <p>12. Bar Chart - </p>
