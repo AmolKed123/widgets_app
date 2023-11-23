@@ -2,7 +2,7 @@ import * as React from "react";
 import {
   DataGrid,
   GridToolbarContainer,
-  GridToolbarExport,
+  GridToolbarExport,GridToolbarFilterButton
 } from "@mui/x-data-grid";
 import { Stack, Box } from "@mui/material";
 
@@ -10,6 +10,7 @@ function CustomToolbar() {
   return (
     <Stack direction="row-reverse">
       <GridToolbarContainer>
+        <GridToolbarFilterButton />
         <GridToolbarExport printOptions={{ disableToolbarButton: true }} />
       </GridToolbarContainer>
     </Stack>

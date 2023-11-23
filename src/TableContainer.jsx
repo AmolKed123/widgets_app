@@ -20,6 +20,7 @@ import "./TableContainer.css";
 import BasicTextField from "./CommonComponents/BasicTextField";
 import CustomPicker from "./Components/CustomDatePicker";
 import SelectSingleOption from "./Components/SelectSingleOption";
+import BerrySelect from "./Components/BerrySelect";
 
 export default function TableContainer() {
   return (
@@ -27,6 +28,10 @@ export default function TableContainer() {
       <Stack sx={{ width: "100%" }}>
         <Header />
         <Stack className="child-components" sx={{ mx: 5, width: "auto" }}>
+        <Stack direction="row" alignItems="center" spacing={3} sx={{ mt: 5 }}>
+            <p className="autocompleteclass">0.Berry Select - </p>
+            <BerrySelect />
+          </Stack>
           <Stack direction="row" alignItems="center" spacing={3} sx={{ mt: 5 }}>
             <p className="autocompleteclass">1. AutoComplete TextField - </p>
             <AutoComplete
