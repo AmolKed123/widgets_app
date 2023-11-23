@@ -3,7 +3,7 @@ import { Box, Stack, Slider } from "@mui/material";
 import VolumeUp from "@mui/icons-material/VolumeUp";
 
 export default function VolumeSlider() {
-  const [value, setValue] = useState(30);
+  const [value, setValue] = useState(0);
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };

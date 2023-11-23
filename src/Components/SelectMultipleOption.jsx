@@ -23,31 +23,31 @@ const MenuProps = {
   },
 };
 
-const countryNames = [
-  "Australia",
-  "India",
-  "USA",
-  "United Kingdom",
-  "Srilanka",
-  "China",
-  "Japan",
-  "Bangladesh",
-  "South Africa",
-  "Poland",
-  "Austin",
-  "Germany",
-  "France",
-  "Italy",
-  "Kenya",
-  "Morocco",
-  "Jordan",
-  "Zambia",
-  "Ireland",
-  "Yemen",
-  "Qatar",
-];
+// const countryNames = [
+//   "Australia",
+//   "India",
+//   "USA",
+//   "United Kingdom",
+//   "Srilanka",
+//   "China",
+//   "Japan",
+//   "Bangladesh",
+//   "South Africa",
+//   "Poland",
+//   "Austin",
+//   "Germany",
+//   "France",
+//   "Italy",
+//   "Kenya",
+//   "Morocco",
+//   "Jordan",
+//   "Zambia",
+//   "Ireland",
+//   "Yemen",
+//   "Qatar",
+// ];
 
-export default function SelectWithCheckbox() {
+export default function SelectMultipleOption({labelName,Options}) {
   const [countryName, setCountryName] = useState([]);
 
   const handleChange = (event) => {
@@ -57,7 +57,7 @@ export default function SelectWithCheckbox() {
     } = event;
     setCountryName(typeof value === "string" ? value.split(",") : value);
   };
-
+  console.log("country name is",countryName);
   return (
     <>
       <Stack>
@@ -66,7 +66,7 @@ export default function SelectWithCheckbox() {
             id="demo-multiple-checkbox-label"
             sx={{ fontSize: "14px !important" }}
           >
-            Country
+            {labelName}
           </InputLabel>
           <Select
             labelId="demo-multiple-checkbox-label"
@@ -79,7 +79,7 @@ export default function SelectWithCheckbox() {
             renderValue={(selected) => selected.join(", ")}
             MenuProps={MenuProps}
           >
-            {countryNames.map((name) => (
+            {Options.map((name) => (
               <MenuItem
                 key={name}
                 value={name}

@@ -1,8 +1,8 @@
 import AutoComplete from "./Components/AutoComplete";
-import SelectWithCheckbox from "./Components/SelectWithCheckbox";
+import SelectMultipleOption from "./Components/SelectMultipleOption";
 import VolumeSlider from "./Components/VolumeSlider";
 import Table from "./Components/Table";
-import SubscribeModel from "./Components/SubscribeModal";
+import CustomModal from "./Components/CustomModal";
 import Stepper from "./Components/Stepper";
 import CircularProgressBar from "./Components/CircularProgressBar";
 import SwitchToggle from "./Components/SwitchToggle";
@@ -27,24 +27,134 @@ export default function TableContainer() {
       <Stack sx={{ width: "100%" }}>
         <Header />
         <Stack className="child-components" sx={{ mx: 5, width: "auto" }}>
-          <Box sx={{ mt: 3 }}>
-            <BasicTextField
-              labelValue="Location"
-              
-            />
-          </Box>
-
           <Stack direction="row" alignItems="center" spacing={3} sx={{ mt: 5 }}>
             <p className="autocompleteclass">1. AutoComplete TextField - </p>
-            <AutoComplete />
+            <AutoComplete
+              labelName="Location"
+              options={[
+                {
+                  label: "Mumbai",
+                },
+                {
+                  label: "Pune",
+                },
+                {
+                  label: "Thane",
+                },
+                {
+                  label: "Delhi",
+                },
+                {
+                  label: "Bangalore",
+                },
+                {
+                  label: "Hyderabad",
+                },
+                {
+                  label: "Chennai",
+                },
+                {
+                  label: "Kolkata",
+                },
+                {
+                  label: "Chandigarh",
+                },
+                {
+                  label: "Lucknow",
+                },
+                {
+                  label: "Mysore",
+                },
+                {
+                  label: "Jaipur",
+                },
+                {
+                  label: "Kanpur",
+                },
+                {
+                  label: "Bhopal",
+                },
+                {
+                  label: "Vijaywada",
+                },
+                {
+                  label: "Indore",
+                },
+                {
+                  label: "Jodhapur",
+                },
+                {
+                  label: "Nagpur",
+                },
+                {
+                  label: "Jammu",
+                },
+                {
+                  label: "Ratnagiri",
+                },
+                {
+                  label: "Solapur",
+                },
+              ]}
+            />
           </Stack>
           <Stack direction="row" alignItems="center" spacing={3} sx={{ mt: 5 }}>
-            <p>2. Select With Checkbox - </p>
-            <SelectWithCheckbox />
+            <p>2. Select Multiple Options - </p>
+            <SelectMultipleOption
+              labelName="Country"
+              Options={[
+                "Australia",
+                "India",
+                "USA",
+                "United Kingdom",
+                "Srilanka",
+                "China",
+                "Japan",
+                "Bangladesh",
+                "South Africa",
+                "Poland",
+                "Austin",
+                "Germany",
+                "France",
+                "Italy",
+                "Kenya",
+                "Morocco",
+                "Jordan",
+                "Zambia",
+                "Ireland",
+                "Yemen",
+                "Qatar",
+              ]}
+            />
           </Stack>
           <Stack direction="row" alignItems="center" spacing={3} sx={{ mt: 5 }}>
             <p>2. Select Single Option - </p>
-            <SelectSingleOption />
+            <SelectSingleOption
+              labelName="Country"
+              Options={[
+                "Australia",
+                "India",
+                "USA",
+                "United Kingdom",
+                "Srilanka",
+                "China",
+                "Japan",
+                "Bangladesh",
+                "South Africa",
+                "Poland",
+                "Austin",
+                "Germany",
+                "France",
+                "Italy",
+                "Kenya",
+                "Morocco",
+                "Jordan",
+                "Zambia",
+                "Ireland",
+                "Yemen",
+                "Qatar",
+              ]}
+            />
           </Stack>
           <Stack direction="row" alignItems="center" spacing={3} sx={{ mt: 5 }}>
             <p>3. Volume Slider - </p>
@@ -56,7 +166,13 @@ export default function TableContainer() {
           </Stack> */}
           <Stack direction="row" alignItems="center" spacing={3} sx={{ mt: 5 }}>
             <p>6. Modal - </p>
-            <SubscribeModel data="Please Provide Email Address To Subscribe To This Website" />
+            <CustomModal
+              modalData={{
+                buttonHeading: "Subscribe",
+                heading: "Subscription Modal",
+                title: "Plz Provide Email To Subscribe To The Webisite",
+              }}
+            />
           </Stack>
           <Stack direction="row" alignItems="center" spacing={3} sx={{ mt: 5 }}>
             <p>7. Stepper - </p>
@@ -81,12 +197,14 @@ export default function TableContainer() {
             <Toast
               message="You Are Registered Successfully"
               colorValue="success"
+              //message="Registration Failed.."
+              //colorValue="error"
             />
           </Stack>
           <Stack direction="row" alignItems="center" spacing={3} sx={{ mt: 5 }}>
             <p>11. Date Picker - </p>
             {/* <CustomPicker /> */}
-             <DatePickerComponent heading="Admission And Joining Date Picker" />
+            <DatePickerComponent heading="Admission Date" />
           </Stack>
           <Stack direction="row" alignItems="center" spacing={3} sx={{ mt: 5 }}>
             <p>12. Bar Chart - </p>

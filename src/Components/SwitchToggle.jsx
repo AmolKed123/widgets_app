@@ -7,7 +7,7 @@ export default function SwitchToggle({colorValue}) {
   const handleChange = (event) => {
     setChecked(event.target.checked);
   };
-
+  console.log("check value",checked);
   return (
     <Switch
       checked={checked}

@@ -18,14 +18,15 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 
-export default function DatePickerComponent() {
+export default function DatePickerComponent({heading}) {
   const [value, setValue] = React.useState(dayjs(""));
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs} sx={{border:"1px solid yellow"}}>
       <DemoContainer components={["DatePicker"]}>
        <DatePicker
-          label="Basic Date Picker"
+          sx={{width:160}}
+          label={heading}
           size="small"
           slotProps={{ textField: { error: false,size:"small" } }}
           value={value}

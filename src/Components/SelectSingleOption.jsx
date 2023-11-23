@@ -10,7 +10,6 @@ import {
   Stack,
 } from "@mui/material";
 
-
 const MenuProps = {
   MenuListProps: {
     disablePadding: true,
@@ -47,7 +46,7 @@ const countryNames = [
   "Qatar",
 ];
 
-export default function SelectSingleOption() {
+export default function SelectSingleOption({ labelName,Options }) {
   const [countryName, setCountryName] = useState([]);
 
   const handleChange = (event) => {
@@ -66,7 +65,7 @@ export default function SelectSingleOption() {
             id="demo-multiple-checkbox-label"
             sx={{ fontSize: "14px !important" }}
           >
-            Country
+          {labelName}
           </InputLabel>
           <Select
             labelId="demo-multiple-checkbox-label"
@@ -74,15 +73,22 @@ export default function SelectSingleOption() {
             value={countryName}
             onChange={handleChange}
             label="Country"
-            sx={{ fontSize: "14px !important",borderRadius:'6px' }}
+            sx={{ fontSize: "14px !important", borderRadius: "6px" }}
             MenuProps={MenuProps}
           >
-            {countryNames.map((name) => (
+            <MenuItem
+              value=""
+              size="small"
+              sx={{ py: 0.5, px: 1.5, fontSize: "14px !important" }}
+            >
+              <span>None</span>
+            </MenuItem>
+            {Options.map((name) => (
               <MenuItem
                 key={name}
                 value={name}
                 size="small"
-                sx={{ py: 0.5,px:1.5, fontSize: "14px !important" }}
+                sx={{ py: 0.5, px: 1.5, fontSize: "14px !important" }}
               >
                 <span>{name}</span>
               </MenuItem>

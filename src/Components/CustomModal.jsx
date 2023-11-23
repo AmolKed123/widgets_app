@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useEffect, useState } from "react";
 import {
   Button,
   TextField,
@@ -9,8 +9,13 @@ import {
   DialogTitle,
 } from "@mui/material";
 
-export default function SubscribeModal({data}) {
+export default function CustomModal({ modalData }) {
   const [open, setOpen] = React.useState(false);
+  const [modalInfo, setModalInfo] = useState({
+    email: "",
+    modalAgree: false,
+  });
+  const { buttonHeading, heading, title } = modalData;
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -20,17 +25,31 @@ export default function SubscribeModal({data}) {
     setOpen(false);
   };
 
+  const handleChange = (e) => {
+    setModalInfo({
+      ...modalInfo,
+      ["email"]: e.target.value,
+    });
+  };
+  const handleSubmit = () => {
+    if (modalInfo.email) {
+      setModalInfo({
+        ...modalInfo,
+        ["modalAgree"]: true,
+      });
+      setOpen(false);
+    }
+  };
+  console.log("modal info", modalInfo);
   return (
     <React.Fragment>
       <Button variant="outlined" onClick={handleClickOpen}>
-        Open form modal
+        {buttonHeading}
       </Button>
       <Dialog open={open} onClose={handleClose}>
-        <DialogTitle>Subscribe</DialogTitle>
+        <DialogTitle>{heading}</DialogTitle>
         <DialogContent>
-          <DialogContentText>
-            {data}
-          </DialogContentText>
+          <DialogContentText>{title}</DialogContentText>
           <TextField
             autoFocus
             margin="dense"
@@ -39,11 +58,12 @@ export default function SubscribeModal({data}) {
             type="email"
             fullWidth
             variant="standard"
+            onChange={handleChange}
           />
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>Cancel</Button>
-          <Button onClick={handleClose}>Subscribe</Button>
+          <Button onClick={handleSubmit}>Submit</Button>
         </DialogActions>
       </Dialog>
     </React.Fragment>

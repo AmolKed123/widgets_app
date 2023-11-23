@@ -1,10 +1,10 @@
 import React from "react";
-import SearchAppBar from "./Components/SearchAppBar";
+import CustomAppBar from "./Components/CustomAppBar";
 
 export default function Header() {
   return (
     <>
-      <SearchAppBar />
+      <CustomAppBar companyBrand="Brand" />
     </>
   );
 }
