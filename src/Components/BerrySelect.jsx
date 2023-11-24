@@ -1,20 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { Grid, MenuItem, TextField, Typography } from "@mui/material";
-
-// const status = [
-//   {
-//     value: "today",
-//     label: "Today",
-//   },
-//   {
-//     value: "month",
-//     label: "This Month",
-//   },
-//   {
-//     value: "year",
-//     label: "This Year",
-//   },
-// ];
+import React, { useState } from "react";
+import { MenuItem, TextField } from "@mui/material";
 
 const countryNames = [
   {
@@ -89,7 +74,7 @@ const countryNames = [
 
 const BerrySelect = () => {
   const [value, setValue] = useState("");
-
+  console.log("value is ",value);
   return (
     <TextField
       id="standard-select-currency"
@@ -138,6 +123,12 @@ const BerrySelect = () => {
       value={value}
       onChange={(e) => setValue(e.target.value)}
     >
+      <MenuItem
+          value=""
+          sx={{ py: 0.5, px: 1.5, fontSize: "14px !important" }}
+        >
+          None
+        </MenuItem>
       {countryNames.map((option) => (
         <MenuItem
           key={option.value}
