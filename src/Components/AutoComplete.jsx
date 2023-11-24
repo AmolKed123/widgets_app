@@ -1,103 +1,23 @@
-import React, { useState, useEffect } from "react";
-import { TextField, Autocomplete, Typography } from "@mui/material";
+import React, { useState } from "react";
+import { TextField, Autocomplete, Paper } from "@mui/material";
 
-// const LocationsList = [
-//   {
-//     label: "Mumbai",
-//     cityName: "mumbai",
-//     value: "Mumbapuri",
-//   },
-//   {
-//     label: "Pune",
-//     cityName: "pune",
-//   },
-//   {
-//     label: "Thane",
-//     cityName: "thane",
-//   },
-//   {
-//     label: "Delhi",
-//     cityName: "delhi",
-//   },
-//   {
-//     label: "Bangalore",
-//     cityName: "bangalore",
-//   },
-//   {
-//     label: "Hyderabad",
-//     cityName: "hyderabad",
-//   },
-//   {
-//     label: "Chennai",
-//     cityName: "chennai",
-//   },
-//   {
-//     label: "Kolkata",
-//     cityName: "kolkata",
-//   },
-//   {
-//     label: "Chandigarh",
-//     cityName: "chandigarh",
-//   },
-//   {
-//     label: "Lucknow",
-//     cityName: "lucknow",
-//   },
-//   {
-//     label: "Mysore",
-//     cityName: "mysore",
-//   },
-//   {
-//     label: "Jaipur",
-//     cityName: "jaipur",
-//   },
-//   {
-//     label: "Kanpur",
-//     cityName: "kanpur",
-//   },
-//   {
-//     label: "Bhopal",
-//     cityName: "bhopal",
-//   },
-//   {
-//     label: "Vijaywada",
-//     cityName: "vijaywada",
-//   },
-//   {
-//     label: "Indore",
-//     cityName: "indore",
-//   },
-//   {
-//     label: "Jodhapur",
-//     cityName: "jodhpur",
-//   },
-//   {
-//     label: "Nagpur",
-//     cityName: "nagpur",
-//   },
-//   {
-//     label: "Jammu",
-//     cityName: "jammu",
-//   },
-//   {
-//     label: "Ratnagiri",
-//     cityName: "ratnagiri",
-//   },
-//   {
-//     label: "Solapur",
-//     cityName: "solapur",
-//   },
-// ];
-
-export default function AutoCompleteField({labelName,options}) {
+export default function AutoCompleteField({ labelName, options, customWidth }) {
   const [inputValue, setInputValue] = useState("");
 
-  console.log("Input Value", inputValue);
+  console.log("Input Value autocomplete", inputValue, customWidth);
   return (
     <Autocomplete
       disablePortal
       ListboxProps={{
-        sx: { fontSize: 14, p: 0, maxHeight: "164px" },
+        sx: {
+          fontSize: 14,
+          maxHeight: 176,
+          overflowY: "scroll",
+          scrollbarWidth: "none",
+          "&::-webkit-scrollbar": {
+            display: "none",
+          },
+        },
       }}
       id="combo-box-demo"
       value={inputValue}
@@ -106,12 +26,18 @@ export default function AutoCompleteField({labelName,options}) {
       }}
       options={options}
       sx={{
-        width: 160,
-        borderRadius:'6px',
+        width: customWidth,
         fontSize: "14px  !important",
         "& + .MuiAutocomplete-popper .MuiAutocomplete-option": {
-         py:0.4
+          lineHeight: "18.676px",
+          height: "30.6719px",
+          color: "#364152",
+          padding: "6px 16px 6px 16px",
         },
+        "& + .MuiAutocomplete-popper .MuiAutocomplete-option[aria-selected='true']":
+          {
+            backgroundColor: "#1976D20",
+          },
       }}
       renderInput={(params) => (
         <TextField
@@ -119,12 +45,30 @@ export default function AutoCompleteField({labelName,options}) {
           label={labelName}
           id="outlined-size-small"
           size="small"
-          InputLabelProps={{ style: { fontSize: 14 } }}
+          InputLabelProps={{ style: { fontSize: 14 }, shrink: true }}
           sx={{
             "& .MuiInputBase-root": {
-              fontSize: "14px",borderRadius:'6px'
-            }
+              fontSize: "14px",
+              borderRadius: "8px",
+              backgroundColor: "#F8FAFC",
+              color: "#121926",
+              padding: "12px 32px 16px 14px !important",
+              minHeight: "auto",
+              minWidth: "auto",
+              fontWeight: "500",
+              height: "52.125px",
+            },
           }}
+        />
+      )}
+      PaperComponent={(props) => (
+        <Paper
+          sx={{
+            fontSize: 14,
+            borderRadius: 2,
+            color: "#364152"
+          }}
+          {...props}
         />
       )}
     />

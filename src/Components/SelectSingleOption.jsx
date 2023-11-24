@@ -1,101 +1,142 @@
 import React, { useState } from "react";
-import {
-  OutlinedInput,
-  InputLabel,
-  MenuItem,
-  FormControl,
-  ListItemText,
-  Select,
-  Checkbox,
-  Stack,
-} from "@mui/material";
-
-const MenuProps = {
-  MenuListProps: {
-    disablePadding: true,
-  },
-  PaperProps: {
-    style: {
-      maxHeight: 168,
-      width: 160,
-    },
-  },
-};
+import { MenuItem, TextField } from "@mui/material";
 
 const countryNames = [
-  "Australia",
-  "India",
-  "USA",
-  "United Kingdom",
-  "Srilanka",
-  "China",
-  "Japan",
-  "Bangladesh",
-  "South Africa",
-  "Poland",
-  "Austin",
-  "Germany",
-  "France",
-  "Italy",
-  "Kenya",
-  "Morocco",
-  "Jordan",
-  "Zambia",
-  "Ireland",
-  "Yemen",
-  "Qatar",
+  {
+    value: "Australia",
+    label: "Australia",
+  },
+  {
+    value: "India",
+    label: "India",
+  },
+  {
+    value: "USA",
+    label: "USA",
+  },
+  {
+    value: "United Kingdom",
+    label: "United Kingdom",
+  },
+  {
+    value: "Srilanka",
+    label: "Srilanka",
+  },
+  {
+    value: "China",
+    label: "China",
+  },
+  {
+    value: "Japan",
+    label: "Japan",
+  },
+  {
+    value: "South Africa",
+    label: "South Africa",
+  },
+  {
+    value: "Poland",
+    label: "Poland",
+  },
+  {
+    value: "Austin",
+    label: "Austin",
+  },
+  {
+    value: "Germany",
+    label: "Germany",
+  },
+  {
+    value: "France",
+    label: "France",
+  },
+  {
+    value: "Italy",
+    label: "Italy",
+  },
+  {
+    value: "Kenya",
+    label: "Kenya",
+  },
+  {
+    value: "Ireland",
+    label: "Ireland",
+  },
+  {
+    value: "Zambia",
+    label: "Zambia",
+  },
+  {
+    value: "Qatar",
+    label: "Qatar",
+  },
 ];
 
-export default function SelectSingleOption({ labelName,Options }) {
-  const [countryName, setCountryName] = useState([]);
+const SelectSingleOption = ({labelName,Options,customWidth}) => {
+  const [value, setValue] = useState("");
 
-  const handleChange = (event) => {
-    console.log("event ", event);
-    const {
-      target: { value },
-    } = event;
-    setCountryName(value);
-  };
-
+  console.log("value is ", value);
   return (
-    <>
-      <Stack>
-        <FormControl sx={{ m: 0, width: 160 }} size="small">
-          <InputLabel
-            id="demo-multiple-checkbox-label"
-            sx={{ fontSize: "14px !important" }}
-          >
-          {labelName}
-          </InputLabel>
-          <Select
-            labelId="demo-multiple-checkbox-label"
-            id="demo-multiple-checkbox"
-            value={countryName}
-            onChange={handleChange}
-            label="Country"
-            sx={{ fontSize: "14px !important", borderRadius: "6px" }}
-            MenuProps={MenuProps}
-          >
-            <MenuItem
-              value=""
-              size="small"
-              sx={{ py: 0.5, px: 1.5, fontSize: "14px !important" }}
-            >
-              <span>None</span>
-            </MenuItem>
-            {Options.map((name) => (
-              <MenuItem
-                key={name}
-                value={name}
-                size="small"
-                sx={{ py: 0.5, px: 1.5, fontSize: "14px !important" }}
-              >
-                <span>{name}</span>
-              </MenuItem>
-            ))}
-          </Select>
-        </FormControl>
-      </Stack>
-    </>
+    <TextField
+      id="standard-select-currency"
+      size="small"
+      InputProps={{
+        style: {
+          borderRadius: "8px",
+        },
+      }}
+      sx={{
+        width:customWidth,
+        ".MuiInputBase-input": {
+          fontSize: "14px",
+          backgroundColor: "#F8FAFC",
+          color: "#121926",
+          lineHeight: "20.125px",
+          padding: "16px 32px 16px 14px",
+          height: "20.125px",
+          minHeight: "auto",
+          minWidth: "auto",
+          fontWeight: "500",
+        },
+      }}
+      select
+      label={labelName}
+      InputLabelProps={{ style: { fontSize: 14 }, shrink: true }}
+      SelectProps={{
+        MenuProps: {
+          PaperProps: {
+            sx: {
+              maxHeight: 181,
+              width:customWidth,
+              fontSize: 14,
+              borderRadius: 2,
+              color: "#364152",
+              overflowY: "scroll",
+              scrollbarWidth: "none",
+              "&::-webkit-scrollbar": {
+                display: "none",
+              },
+            },
+          },
+        },
+      }}
+      value={value}
+      onChange={(e) => setValue(e.target.value)}
+    >
+      <MenuItem value="" sx={{ py: 0.5, px: 1.5, fontSize: "14px !important" }}>
+        None
+      </MenuItem>
+      {Options.map((option) => (
+        <MenuItem
+          key={option.value}
+          value={option.value}
+          sx={{ py: 0.5, px: 1.5, fontSize: "14px !important" }}
+        >
+          {option.label}
+        </MenuItem>
+      ))}
+    </TextField>
   );
-}
+};
+
+export default SelectSingleOption;

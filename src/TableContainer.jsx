@@ -28,7 +28,7 @@ export default function TableContainer() {
       <Stack sx={{ width: "100%" }}>
         <Header />
         <Stack className="child-components" sx={{ mx: 5, width: "auto" }}>
-        <Stack direction="row" alignItems="center" spacing={3} sx={{ mt: 5 }}>
+          <Stack direction="row" alignItems="center" spacing={3} sx={{ mt: 5 }}>
             <p className="autocompleteclass">0.Berry Select - </p>
             <BerrySelect />
           </Stack>
@@ -101,6 +101,7 @@ export default function TableContainer() {
                   label: "Solapur",
                 },
               ]}
+              customWidth={160}
             />
           </Stack>
           <Stack direction="row" alignItems="center" spacing={3} sx={{ mt: 5 }}>
@@ -108,28 +109,76 @@ export default function TableContainer() {
             <SelectMultipleOption
               labelName="Country"
               Options={[
-                "Australia",
-                "India",
-                "USA",
-                "United Kingdom",
-                "Srilanka",
-                "China",
-                "Japan",
-                "Bangladesh",
-                "South Africa",
-                "Poland",
-                "Austin",
-                "Germany",
-                "France",
-                "Italy",
-                "Kenya",
-                "Morocco",
-                "Jordan",
-                "Zambia",
-                "Ireland",
-                "Yemen",
-                "Qatar",
+                {
+                  value: "Australia",
+                  label: "Australia",
+                },
+                {
+                  value: "India",
+                  label: "India",
+                },
+                {
+                  value: "USA",
+                  label: "USA",
+                },
+                {
+                  value: "United Kingdom",
+                  label: "United Kingdom",
+                },
+                {
+                  value: "Srilanka",
+                  label: "Srilanka",
+                },
+                {
+                  value: "China",
+                  label: "China",
+                },
+                {
+                  value: "Japan",
+                  label: "Japan",
+                },
+                {
+                  value: "South Africa",
+                  label: "South Africa",
+                },
+                {
+                  value: "Poland",
+                  label: "Poland",
+                },
+                {
+                  value: "Austin",
+                  label: "Austin",
+                },
+                {
+                  value: "Germany",
+                  label: "Germany",
+                },
+                {
+                  value: "France",
+                  label: "France",
+                },
+                {
+                  value: "Italy",
+                  label: "Italy",
+                },
+                {
+                  value: "Kenya",
+                  label: "Kenya",
+                },
+                {
+                  value: "Ireland",
+                  label: "Ireland",
+                },
+                {
+                  value: "Zambia",
+                  label: "Zambia",
+                },
+                {
+                  value: "Qatar",
+                  label: "Qatar",
+                },
               ]}
+              customWidth={160}
             />
           </Stack>
           <Stack direction="row" alignItems="center" spacing={3} sx={{ mt: 5 }}>
@@ -137,28 +186,76 @@ export default function TableContainer() {
             <SelectSingleOption
               labelName="Country"
               Options={[
-                "Australia",
-                "India",
-                "USA",
-                "United Kingdom",
-                "Srilanka",
-                "China",
-                "Japan",
-                "Bangladesh",
-                "South Africa",
-                "Poland",
-                "Austin",
-                "Germany",
-                "France",
-                "Italy",
-                "Kenya",
-                "Morocco",
-                "Jordan",
-                "Zambia",
-                "Ireland",
-                "Yemen",
-                "Qatar",
+                {
+                  value: "Australia",
+                  label: "Australia",
+                },
+                {
+                  value: "India",
+                  label: "India",
+                },
+                {
+                  value: "USA",
+                  label: "USA",
+                },
+                {
+                  value: "United Kingdom",
+                  label: "United Kingdom",
+                },
+                {
+                  value: "Srilanka",
+                  label: "Srilanka",
+                },
+                {
+                  value: "China",
+                  label: "China",
+                },
+                {
+                  value: "Japan",
+                  label: "Japan",
+                },
+                {
+                  value: "South Africa",
+                  label: "South Africa",
+                },
+                {
+                  value: "Poland",
+                  label: "Poland",
+                },
+                {
+                  value: "Austin",
+                  label: "Austin",
+                },
+                {
+                  value: "Germany",
+                  label: "Germany",
+                },
+                {
+                  value: "France",
+                  label: "France",
+                },
+                {
+                  value: "Italy",
+                  label: "Italy",
+                },
+                {
+                  value: "Kenya",
+                  label: "Kenya",
+                },
+                {
+                  value: "Ireland",
+                  label: "Ireland",
+                },
+                {
+                  value: "Zambia",
+                  label: "Zambia",
+                },
+                {
+                  value: "Qatar",
+                  label: "Qatar",
+                },
               ]}
+              customWidth={160}
             />
           </Stack>
           <Stack direction="row" alignItems="center" spacing={3} sx={{ mt: 5 }}>
