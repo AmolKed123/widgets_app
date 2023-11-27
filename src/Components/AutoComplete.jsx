@@ -66,9 +66,9 @@ export default function AutoCompleteField({ labelName, options, customWidth }) {
           sx={{
             fontSize: 14,
             borderRadius: 2,
-            color: "#364152"
+            color: "#364152",
           }}
-          {...props}
+           {...props}
         />
       )}
     />

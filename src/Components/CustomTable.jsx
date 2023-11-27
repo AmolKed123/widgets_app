@@ -378,7 +378,7 @@ const rows = [
   },
 ];
 
-export default function Table() {
+export default function CustomTable() {
   return (
     <div style={{ height: "auto", width: "auto", maxWidth: "100%" }}>
       <DataGrid

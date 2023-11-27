@@ -1,7 +1,7 @@
 import AutoComplete from "./Components/AutoComplete";
 import SelectMultipleOption from "./Components/SelectMultipleOption";
 import VolumeSlider from "./Components/VolumeSlider";
-import Table from "./Components/Table";
+import CustomTable from "./Components/CustomTable";
 import CustomModal from "./Components/CustomModal";
 import Stepper from "./Components/Stepper";
 import CircularProgressBar from "./Components/CircularProgressBar";
@@ -37,69 +37,22 @@ export default function TableContainer() {
             <AutoComplete
               labelName="Location"
               options={[
-                {
-                  label: "Mumbai",
-                },
-                {
-                  label: "Pune",
-                },
-                {
-                  label: "Thane",
-                },
-                {
-                  label: "Delhi",
-                },
-                {
-                  label: "Bangalore",
-                },
-                {
-                  label: "Hyderabad",
-                },
-                {
-                  label: "Chennai",
-                },
-                {
-                  label: "Kolkata",
-                },
-                {
-                  label: "Chandigarh",
-                },
-                {
-                  label: "Lucknow",
-                },
-                {
-                  label: "Mysore",
-                },
-                {
-                  label: "Jaipur",
-                },
-                {
-                  label: "Kanpur",
-                },
-                {
-                  label: "Bhopal",
-                },
-                {
-                  label: "Vijaywada",
-                },
-                {
-                  label: "Indore",
-                },
-                {
-                  label: "Jodhapur",
-                },
-                {
-                  label: "Nagpur",
-                },
-                {
-                  label: "Jammu",
-                },
-                {
-                  label: "Ratnagiri",
-                },
-                {
-                  label: "Solapur",
-                },
+                "Kolkata",
+                "Mumbai",
+                "Delhi",
+                "Chennai",
+                "Bangalore",
+                "Hyderabad",
+                "Pune",
+                "Nagpur",
+                "Jaipur",
+                "Bhopal",
+                "Ahmedabad",
+                "Surat",
+                "Mysore",
+                "Kochi",
+                "Chandigarh",
+                "Lucknow",
               ]}
               customWidth={160}
             />
@@ -264,7 +217,7 @@ export default function TableContainer() {
           </Stack>
           {/* <Stack direction="row" alignItems="center" spacing={3} sx={{ mt: 5 }}>
             <p>4. Table - </p>
-            <Table />
+            <CustomTable />
           </Stack> */}
           <Stack direction="row" alignItems="center" spacing={3} sx={{ mt: 5 }}>
             <p>6. Modal - </p>
@@ -334,7 +287,7 @@ export default function TableContainer() {
             <AccordionComponent />
           </Stack>
           <Stack direction="row" alignItems="center" sx={{ mt: 5 }}>
-            <Table />
+            <CustomTable />
           </Stack>
           {/* <Stack direction="row" alignItems="center" spacing={3} sx={{ mt: 5 }}>
             <DataTable />

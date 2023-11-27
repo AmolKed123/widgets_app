@@ -74,7 +74,7 @@ const countryNames = [
 
 const SelectMultipleOption = ({ labelName, Options, customWidth }) => {
   const [inputValue, setInputValue] = useState([]);
-
+  console.log("input value",inputValue);
   const handleChange = (event) => {
     const {
       target: { value },

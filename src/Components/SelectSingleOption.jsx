@@ -75,7 +75,7 @@ const countryNames = [
 const SelectSingleOption = ({labelName,Options,customWidth}) => {
   const [value, setValue] = useState("");
 
-  console.log("value is ", value);
+  console.log("select single option value is ", value);
   return (
     <TextField
       id="standard-select-currency"
